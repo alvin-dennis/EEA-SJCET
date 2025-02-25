@@ -1,0 +1,50 @@
+---
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Shield, Zap, Sun, Filter } from "lucide-react";
+import { featuresData } from "@/lib/constants";
+
+const iconMap = {
+  Shield,
+  Zap,
+  Sun,
+  Filter,
+};
+---
+
+<section class="py-10 bg-gray-100 dark:bg-gray-800 sm:py-16 lg:py-24">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <h2
+      class="text-4xl font-bold mb-8 text-center text-gray-900 dark:text-white"
+    >
+      Features
+    </h2>
+    <div
+      class="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-4 sm:gap-12"
+    >
+      {
+        featuresData.map(
+          (feature: { title: string; description: string; icon: string }) => {
+            const Icon = iconMap[feature.icon as keyof typeof iconMap];
+            return (
+              <Card className="bg-gray-50 dark:bg-gray-700">
+                <CardHeader>
+                  <div class="flex items-center justify-center w-20 h-20 mx-auto bg-blue-100 dark:bg-blue-900 rounded-full">
+                    <Icon className="w-9 h-9 text-blue-600 dark:text-blue-300" />
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
+                    {feature.title}
+                  </CardTitle>
+                  <p class="mt-4 text-base text-gray-600 dark:text-gray-300">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          }
+        )
+      }
+    </div>
+  </div>
+</section>
