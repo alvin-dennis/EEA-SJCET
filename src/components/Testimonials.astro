@@ -3,13 +3,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { testimonialsData } from '@/lib/constants';
 ---
 
-<section id="testimonials" class="py-20 bg-gray-100 dark:bg-gradient-to-br from-[#005C97] to-[#363795]">
+<section id="testimonials" class="py-20 bg-gray-100 dark:bg-linear-to-br from-[#005C97] to-[#363795]">
   <div class="container mx-auto px-6">
     <h2 class="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">What our customers say</h2>
     <div class="carousel overflow-hidden relative w-full mx-auto">
       <div class="carousel-track flex">
         {[...testimonialsData, ...testimonialsData].map((testimonial, index) => (
-          <div class="carousel-item flex-shrink-0 px-4" key={index}>
+          <div class="carousel-item shrink-0 px-4" key={index}>
             <Card className="bg-white dark:bg-gray-800 shadow-lg">
               <CardContent className="p-6">
                 <div class="flex items-center mb-4">

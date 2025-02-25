@@ -1,18 +1,17 @@
-export const siteTitle = "NexTech Innovations - Shaping the Future";
+export const siteTitle = "EESA - SJCET";
 
 export const navigation = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Testimonials", href: "#testimonials" },
+  { name: "Vision", href: "#vision" },
+  { name: "Events", href: "#events" },
+  { name: "Execom", href: "#execom" },
   { name: "Contact", href: "#contact" },
 ];
 
 export const heroData = {
   title: "Innovating for Tomorrow",
   subtitle: "Cutting-edge solutions for a connected world",
-  cta: "Get Started",
 };
 
 export const aboutData = {
@@ -76,7 +75,7 @@ export const statsData = [
   { value: "37", label: "Team members", subtext: "Working for your success" },
 ];
 
-export const projectsData = [
+export const eventsData = [
   {
     title: "Smart City Platform",
     description: "Revolutionizing urban living with IoT and AI",
@@ -112,24 +111,5 @@ export const testimonialsData = [
     author: "Mike Johnson",
     position: "CTO of FutureSystems",
     image: "https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-3.jpg",
-  },
-];
-
-export const faqData = [
-  {
-    question: "How to create an account?",
-    answer: "To create an account, click on the 'Sign Up' button in the top right corner of our website. Fill in the required information, including your email address and a secure password. Once you've completed the form, click 'Create Account' and follow the verification steps sent to your email.",
-  },
-  {
-    question: "How can I make payment using Paypal?",
-    answer: "To make a payment using PayPal, select PayPal as your payment method during checkout. You'll be redirected to the PayPal website to log in and confirm your payment. Once the transaction is complete, you'll be returned to our site to finalize your order.",
-  },
-  {
-    question: "Can I cancel my plan?",
-    answer: "Yes, you can cancel your plan at any time. Go to your account settings and select 'Subscription'. From there, you'll see an option to cancel your current plan. Please note that cancellations are effective at the end of your current billing cycle.",
-  },
-  {
-    question: "How can I reach to support?",
-    answer: "Our support team is available 24/7. You can reach us through our contact form on the website, by emailing support@nextech.com, or by calling our toll-free number at 1-800-NEXTECH. We aim to respond to all inquiries within 24 hours.",
   },
 ];
