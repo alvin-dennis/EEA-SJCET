@@ -43,9 +43,11 @@ export default function VisionMission() {
                 {VISION_MISSION.mission.title}
               </h3>
             </div>
-            <p className="text-muted-foreground relative z-10">
-              {VISION_MISSION.mission.description}
-            </p>
+            <ul className="text-muted-foreground relative z-10 list-disc pl-5 space-y-2">
+              {VISION_MISSION.mission.description.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -73,9 +75,9 @@ export default function VisionMission() {
         <ScrollBaseAnimation
           delay={500}
           baseVelocity={-3}
-          clasname="font-regular tracking-[-0.07em] leading-[90%]"
+          clasname="font-regular tracking-[-0.07em] leading-[90%] py-4"
         >
-          Electrical and Electronics
+          Department of Electrical and Electronics Engineering
         </ScrollBaseAnimation>
 
         <ScrollBaseAnimation
@@ -83,7 +85,7 @@ export default function VisionMission() {
           baseVelocity={3}
           clasname="font-regular tracking-[-0.07em] leading-[90%]"
         >
-          Student Association
+          Electrical and Electronics Association
         </ScrollBaseAnimation>
       </div>
     </section>

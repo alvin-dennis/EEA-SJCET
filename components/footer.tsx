@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Zap, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { FOOTER_LINKS, CONTACT_INFO } from "@/lib/constants";
+import Image from "next/image";
+import EEALOGO from "@/assets/EEA.webp";
 
 export default function Footer() {
   return (
@@ -46,8 +48,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div className="animate-fade-in-up">
             <div className="flex items-center gap-2 mb-6">
-              <Zap className="h-6 w-6 text-primary" />
-              <span className="font-bold text-xl">EESA-SJCET</span>
+              <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-white">
+              <Image
+                src={EEALOGO}
+                alt="EEA Logo"
+                width={24}
+                height={24}
+                className="object-contain"
+              />
+              </div>
+              <span className="font-bold text-xl">EEA - SJCET</span>
             </div>
             <p className="text-muted-foreground mb-6">
               Empowering electrical engineering students through innovation,
@@ -122,16 +132,16 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border py-6 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} EESA-SJCET. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} EEA-SJCET. All rights reserved.</p>
           <p className="mt-1">
-            Designed and developed by{" "}
+            Designed & Developed by{" "}
             <a
               href="https://alvindennis.tech"
               className="hover:text-primary transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Alvin
+              Alvin Dennis
             </a>
           </p>
         </div>

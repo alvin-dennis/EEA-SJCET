@@ -1,16 +1,23 @@
 "use client";
 
-import { useEffect } from "react";
-import ClientLayout from "@/components/client-layout";
+import { useEffect, useState } from "react";
+import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero";
 import AboutSection from "@/components/about";
 import VisionMission from "@/components/vision-mission";
 import EventsSection from "@/components/events";
 import ExecomSection from "@/components/execom";
 import Footer from "@/components/footer";
+import Loader from "@/components/loader";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (
@@ -39,16 +46,19 @@ export default function Home() {
     };
   }, []);
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
-    <ClientLayout>
-      <main className="min-h-screen scroll-smooth">
-        <HeroSection />
-        <AboutSection />
-        <VisionMission />
-        <EventsSection />
-        <ExecomSection />
-        <Footer />
-      </main>
-    </ClientLayout>
+    <main className="min-h-screen scroll-smooth">
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <VisionMission />
+      <EventsSection />
+      <ExecomSection />
+      <Footer />
+    </main>
   );
 }

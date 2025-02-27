@@ -20,7 +20,7 @@ export default function ExecomSection() {
   }, []);
 
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section id="execom">
       <div className="py-8 px-4 mx-auto max-w-(--breakpoint-xl) text-center lg:py-16 lg:px-6">
         <div className="mx-auto mb-8 max-w-(--breakpoint-sm) lg:mb-16 animate-fade-in-up">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">

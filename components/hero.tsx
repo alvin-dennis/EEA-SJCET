@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import EESALOGO from "@/assets/EESA.webp";
+import EEALOGO from "@/assets/EEA.webp";
 import { Sparkles } from "@/components/ui/sparkles";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
@@ -17,8 +17,8 @@ export default function HeroSection() {
             <div className="relative w-32 h-32 rounded-full bg-white backdrop-blur-sm flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 animate-pulse bg-primary/20 rounded-full blur-xl" />
               <Image
-                src={EESALOGO}
-                alt="EESA logo"
+                src={EEALOGO}
+                alt="EEA logo"
                 width={96}
                 height={96}
                 className="relative z-10 object-contain p-2"
@@ -27,7 +27,7 @@ export default function HeroSection() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400">
-            Electrical Engineering Students Association
+            Electrical and Electronics Association
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
@@ -41,7 +41,7 @@ export default function HeroSection() {
               Explore Events
             </InteractiveHoverButton>
             <Button size="lg" variant="outline">
-              Join EESA
+              Join Us
             </Button>
           </div>
         </div>
