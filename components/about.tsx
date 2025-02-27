@@ -3,7 +3,6 @@
 import { ABOUT_CONTENT } from "@/lib/constants";
 import { Zap, Building2, Lightbulb, Rocket } from "lucide-react";
 
-// Map icon names to components
 const iconMap = {
   Zap: Zap,
   Building2: Building2,
@@ -63,7 +62,7 @@ export default function AboutSection() {
 
             return (
               <div
-                key={index}
+                key={feature.title}
                 className="bg-card border border-border rounded-lg p-6 transition-all hover:shadow-lg hover:-translate-y-1 duration-300 animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >

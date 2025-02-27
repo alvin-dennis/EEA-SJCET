@@ -18,7 +18,6 @@ export default function VisionMission() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-          {/* Vision */}
           <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-950/10 border border-white/20 dark:border-gray-800/20 rounded-lg p-8 shadow-lg">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full transition-all duration-500 group-hover:scale-125" />
             <div className="flex items-center mb-6">
@@ -34,7 +33,6 @@ export default function VisionMission() {
             </p>
           </div>
 
-          {/* Mission */}
           <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-950/10 border border-white/20 dark:border-gray-800/20 rounded-lg p-8 shadow-lg">
             <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-br-full transition-all duration-500 group-hover:scale-125" />
             <div className="flex items-center mb-6">
@@ -51,15 +49,14 @@ export default function VisionMission() {
           </div>
         </div>
 
-        {/* Values */}
         <div>
           <h3 className="text-2xl font-bold text-center mb-8">
             Our Core Values
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {VISION_MISSION.values.map((value, index) => (
+            {VISION_MISSION.values.map((value) => (
               <div
-                key={index}
+                key={value.title}
                 className="value-card bg-card border border-border rounded-lg p-6 text-center transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
               >
                 <h4 className="text-xl font-semibold mb-3 text-primary">

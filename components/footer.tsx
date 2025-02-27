@@ -46,7 +46,6 @@ export default function Footer() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
-          {/* About Column */}
           <div className="animate-fade-in-up">
             <div className="flex items-center gap-2 mb-6">
               <Zap className="h-6 w-6 text-primary" />
@@ -85,17 +84,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links Columns */}
-          {FOOTER_LINKS.map((column, index) => (
+          {FOOTER_LINKS.map((column) => (
             <div
-              key={index}
+              key={column.title}
               className="animate-fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              style={{ animationDelay: `${FOOTER_LINKS.indexOf(column) * 100}ms` }}
             >
               <h3 className="font-bold text-lg mb-6">{column.title}</h3>
               <ul className="space-y-3">
-                {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
+                {column.links.map((link) => (
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"
@@ -109,7 +107,6 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Newsletter Column */}
           <div
             className="animate-fade-in-up"
             style={{ animationDelay: "300ms" }}
