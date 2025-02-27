@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect} from "react";
+import { useEffect } from "react";
 import ClientLayout from "@/components/client-layout";
 import HeroSection from "@/components/hero";
 import AboutSection from "@/components/about";
@@ -19,14 +19,15 @@ export default function Home() {
       ) {
         e.preventDefault();
         const targetId = target.getAttribute("href");
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-            inline: "nearest",
-          });
+        if (targetId) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest",
+            });
+          }
         }
       }
     };
@@ -38,12 +39,10 @@ export default function Home() {
     };
   }, []);
 
-
-
   return (
     <ClientLayout>
       <main className="min-h-screen scroll-smooth">
-        <HeroSection  />
+        <HeroSection />
         <AboutSection />
         <VisionMission />
         <EventsSection />
