@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { EVENTS } from "@/lib/constants";
 import { Swiper, SwiperSlide } from "swiper/react";

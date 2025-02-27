@@ -199,15 +199,6 @@ export const FOOTER_LINKS = [
     ]
   },
   {
-    title: "Resources",
-    links: [
-      { label: "Blog", href: "#" },
-      { label: "Gallery", href: "#" },
-      { label: "Downloads", href: "#" },
-      { label: "FAQs", href: "#" }
-    ]
-  },
-  {
     title: "Connect",
     links: [
       { label: "Instagram", href: "https://instagram.com" },

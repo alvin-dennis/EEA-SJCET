@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { Zap, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { FOOTER_LINKS, CONTACT_INFO } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 export default function Footer() {
   return (
@@ -53,9 +51,47 @@ export default function Footer() {
             </div>
             <p className="text-muted-foreground mb-6">
               Empowering electrical engineering students through innovation,
-              knowledge, and community at St. Joseph's College of Engineering
-              and Technology.
+              knowledge, and community at St. Joseph&apos;s College of
+              Engineering and Technology.
             </p>
+          </div>
+
+          <div className="animate-fade-in-up">
+            <h3 className="font-bold text-lg mb-6">Quick Links</h3>
+            <ul className="space-y-3">
+              {FOOTER_LINKS[0].links.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <ArrowRight className="h-3 w-3" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="animate-fade-in-up">
+            <h3 className="font-bold text-lg mb-6">Social Links</h3>
+            <ul className="space-y-3">
+              {FOOTER_LINKS[1].links.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <ArrowRight className="h-3 w-3" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="animate-fade-in-up">
+            <h3 className="font-bold text-lg mb-6">Contact Info</h3>
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
@@ -83,52 +119,21 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
-          {FOOTER_LINKS.map((column) => (
-            <div
-              key={column.title}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${FOOTER_LINKS.indexOf(column) * 100}ms` }}
-            >
-              <h3 className="font-bold text-lg mb-6">{column.title}</h3>
-              <ul className="space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"
-                    >
-                      <ArrowRight className="h-3 w-3" />
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          <div
-            className="animate-fade-in-up"
-            style={{ animationDelay: "300ms" }}
-          >
-            <h3 className="font-bold text-lg mb-6">Newsletter</h3>
-            <p className="text-muted-foreground mb-4">
-              Subscribe to our newsletter to receive updates on events and
-              activities.
-            </p>
-            <div className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Your email"
-                className="bg-background"
-              />
-              <Button size="sm">Subscribe</Button>
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-border py-6 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} EESA-SJCET. All rights reserved.</p>
+          <p className="mt-1">
+            Designed and developed by{" "}
+            <a
+              href="https://alvindennis.tech"
+              className="hover:text-primary transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Alvin
+            </a>
+          </p>
         </div>
       </div>
     </footer>
