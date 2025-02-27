@@ -7,9 +7,9 @@ import { Toaster } from "@/components/ui/toaster";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EESA - SJCET | Electrical Engineering Students Association",
+  title: "EEA - SJCET | Electrical and Electronics Association",
   description:
-    "Official website of Electrical Engineering Students Association at St. Joseph's College of Engineering and Technology",
+    "Official website of Electrical and Electronics Association at St. Joseph's College of Engineering and Technology",
 };
 
 export const viewport = {
