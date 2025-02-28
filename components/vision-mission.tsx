@@ -71,11 +71,11 @@ export default function VisionMission() {
         </div>
       </div>
 
-      <div className="h-[500px] grid place-content-center">
+      <div className='h-[500px] grid place-content-center'>
         <ScrollBaseAnimation
           delay={500}
           baseVelocity={-3}
-          clasname="font-bold tracking-[-0.07em] leading-[90%] py-4"
+          clasname='font-bold tracking-[-0.07em] leading-[90%]'
         >
           Department of Electrical and Electronics Engineering
         </ScrollBaseAnimation>
