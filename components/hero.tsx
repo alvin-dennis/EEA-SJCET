@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import EEALOGO from "@/assets/EEA.webp";
 import { Sparkles } from "@/components/ui/sparkles";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -39,7 +40,9 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <InteractiveHoverButton className="group">
-              Explore Events
+              <Link href="#events">
+                Explore Events
+              </Link>
             </InteractiveHoverButton>
             <Button size="lg" variant="outline">
               Join Us
