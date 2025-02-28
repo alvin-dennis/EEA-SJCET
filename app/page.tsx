@@ -53,11 +53,11 @@ export default function Home() {
     const resetVelocity = () => {
       const width = window.innerWidth;
       if (width < 768) {
-        setVelocity(-0.5);
+        setVelocity(-1.5);
       } else if (width < 1024) {
-        setVelocity(-0.7);
+        setVelocity(-1.5);
       } else {
-        setVelocity(-1);
+        setVelocity(-1.5);
       }
     };
 
@@ -89,6 +89,7 @@ export default function Home() {
           defaultVelocity={-velocity}
           numRows={1}
           key={`scroll-1-${velocity}`}
+          className=" font-nura text-4xl"
         >
           Department of Electrical and Electronics Engineering
         </VelocityScroll>
@@ -97,6 +98,7 @@ export default function Home() {
           defaultVelocity={velocity}
           numRows={1}
           key={`scroll-2-${velocity}`}
+          className=" font-nura text-4xl"
         >
           Electrical and Electronics Association
         </VelocityScroll>

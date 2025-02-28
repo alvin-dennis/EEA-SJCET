@@ -57,7 +57,7 @@ export default function Footer() {
                 className="object-contain"
               />
               </div>
-              <span className="font-bold text-xl">EEA - SJCET</span>
+              <span className="font-bold text-xl font-nura">EEA - SJCET</span>
             </div>
             <p className="text-muted-foreground mb-6">
               Empowering electrical engineering students through innovation,
@@ -137,7 +137,7 @@ export default function Footer() {
             Designed & Developed by{" "}
             <a
               href="https://alvindennis.tech"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors font-nura"
               target="_blank"
               rel="noopener noreferrer"
             >

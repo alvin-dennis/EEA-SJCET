@@ -28,7 +28,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="font-bold text-xl">
-            <span className="hidden lg:inline">
+            <span className="hidden lg:inline font-nura">
               Electrical and Electronics Association
             </span>
             <span className="lg:hidden">EEA</span>

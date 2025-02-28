@@ -1,40 +1,64 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { EXECOM_MEMBERS } from "@/lib/constants";
-import { ArrowRight } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { LinkedinIcon, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
-const LinkedinIcon = dynamic(
-  () => import("lucide-react").then((mod) => mod.Linkedin),
-  {
-    ssr: false,
-  }
-);
+interface SocialLinks {
+  linkedin?: string;
+}
 
-export default function ExecomSection() {
+interface ExecomMember {
+  name: string;
+  position: string;
+  image: string;
+  socialLinks: SocialLinks;
+}
+
+export default function PastExecom() {
+  const [selectedYear, setSelectedYear] = useState("2022-23");
   const [isMounted, setIsMounted] = useState(false);
+
+  const years = ["2022-23", "2021-22", "2020-21"];
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
   return (
-    <section id="execom">
-      <div className="py-8 px-4 mx-auto max-w-(--breakpoint-xl) text-center lg:py-16 lg:px-6">
-        <div className="mx-auto mb-8 max-w-(--breakpoint-sm) lg:mb-16 animate-fade-in-up">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Execom
-          </h2>
-          <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-            Meet the team behind EESA-SJCET.
-          </p>
-        </div>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-center mb-8">
+        Previous EEA Execoms
+      </h1>
+
+      <div className="w-[200px] mx-auto mb-8">
+        <Select value={selectedYear} onValueChange={setSelectedYear}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select Year" />
+          </SelectTrigger>
+          <SelectContent>
+            {years.map((year) => (
+              <SelectItem key={year} value={year}>
+                {year}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="py-8 px-4 mx-auto max-w-[--breakpoint-xl] text-center lg:py-16 lg:px-6">
         <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {EXECOM_MEMBERS.map((member, index) => (
+          {EXECOM_MEMBERS.map((member: ExecomMember, index: number) => (
             <div
               key={member.name}
               className="text-center text-gray-500 dark:text-gray-400 animate-fade-in-up group"
@@ -73,15 +97,14 @@ export default function ExecomSection() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-12 flex justify-center">
-          <Link href="/execom">
-            <Button size="lg" className="items-center flex">
-              Meet the Team
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        </div>
       </div>
-    </section>
+      <div className="text-center mt-12 flex justify-center">
+        <Link href="/">
+          <Button size="lg" className="items-center flex">
+            <ArrowLeft className="mr-2 h-4 w-4" /> Go Home
+          </Button>
+        </Link>
+      </div>
+    </div>
   );
 }

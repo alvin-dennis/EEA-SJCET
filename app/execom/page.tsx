@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { EXECOM_MEMBERS } from "@/lib/constants";
-import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
 
 const LinkedinIcon = dynamic(
   () => import("lucide-react").then((mod) => mod.Linkedin),
@@ -15,7 +15,7 @@ const LinkedinIcon = dynamic(
   }
 );
 
-export default function ExecomSection() {
+export default function ExecomPage() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -23,14 +23,14 @@ export default function ExecomSection() {
   }, []);
 
   return (
-    <section id="execom">
-      <div className="py-8 px-4 mx-auto max-w-(--breakpoint-xl) text-center lg:py-16 lg:px-6">
-        <div className="mx-auto mb-8 max-w-(--breakpoint-sm) lg:mb-16 animate-fade-in-up">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Execom
-          </h2>
+    <main className="min-h-screen py-12">
+      <div className="py-8 px-4 mx-auto max-w-[--breakpoint-xl] text-center lg:py-16 lg:px-6">
+        <div className="mx-auto mb-8 max-w-[--breakpoint-sm] lg:mb-16">
+          <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            EEA Execom 2024 - 2025
+          </h1>
           <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-            Meet the team behind EESA-SJCET.
+            The team leading EESA-SJCET forward
           </p>
         </div>
         <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -73,15 +73,15 @@ export default function ExecomSection() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-12 flex justify-center">
-          <Link href="/execom">
-            <Button size="lg" className="items-center flex">
-              Meet the Team
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        </div>
       </div>
-    </section>
+      <div className="text-center mt-12 flex justify-center">
+        <Link href="/past-execom">
+          <Button size="lg" className="items-center flex">
+            View Previous Execoms
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
+      </div>
+    </main>
   );
 }

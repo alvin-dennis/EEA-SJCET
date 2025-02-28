@@ -9,11 +9,11 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center"
+      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center"
     >
-      <div className="container relative mx-auto px-4 z-30">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="flex justify-center mb-6">
+      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 z-30">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center mb-6 px-4">
             <div className="relative w-32 h-32 rounded-full bg-white backdrop-blur-sm flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 animate-pulse bg-primary/20 rounded-full blur-xl" />
               <Image
@@ -26,17 +26,18 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400">
-            Electrical and Electronics Association
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400 px-4">
+            <span className="inline-block">Electrical and</span>{" "}
+            <span className="inline-block">Electronics Association</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 px-4">
             Empowering future electrical engineers at St. Joseph&apos;s College
             of Engineering and Technology through innovation, knowledge, and
             community.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <InteractiveHoverButton className="group">
               Explore Events
             </InteractiveHoverButton>
