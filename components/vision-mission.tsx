@@ -2,9 +2,10 @@
 
 import { VISION_MISSION } from "@/lib/constants";
 import { Lightbulb, Target } from "lucide-react";
-import { ScrollBaseAnimation } from "@/components/ui/text-marquee";
+
 
 export default function VisionMission() {
+
   return (
     <section id="vision" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-b from-background/50 via-background/30 to-background/50 backdrop-blur-lg z-0" />
@@ -69,24 +70,6 @@ export default function VisionMission() {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className='h-[500px] grid place-content-center'>
-        <ScrollBaseAnimation
-          delay={500}
-          baseVelocity={-3}
-          clasname='font-bold tracking-[-0.07em] leading-[90%]'
-        >
-          Department of Electrical and Electronics Engineering
-        </ScrollBaseAnimation>
-
-        <ScrollBaseAnimation
-          delay={500}
-          baseVelocity={3}
-          clasname="font-bold tracking-[-0.07em] leading-[90%]"
-        >
-          Electrical and Electronics Association
-        </ScrollBaseAnimation>
       </div>
     </section>
   );

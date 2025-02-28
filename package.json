@@ -57,6 +57,7 @@
     "gsap": "^3.12.5",
     "input-otp": "^1.1.0",
     "lucide-react": "^0.350.0",
+    "motion": "^12.4.7",
     "next": "^15.2.0",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.35",

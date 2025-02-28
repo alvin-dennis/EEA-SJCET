@@ -9,6 +9,7 @@ import EventsSection from "@/components/events";
 import ExecomSection from "@/components/execom";
 import Footer from "@/components/footer";
 import Loader from "@/components/loader";
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +47,33 @@ export default function Home() {
     };
   }, []);
 
+  const [velocity, setVelocity] = useState(-1);
+
+  useEffect(() => {
+    const resetVelocity = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setVelocity(-0.5);
+      } else if (width < 1024) {
+        setVelocity(-0.7);
+      } else {
+        setVelocity(-1);
+      }
+    };
+
+    resetVelocity();
+
+    window.addEventListener("resize", resetVelocity);
+
+    document.addEventListener("visibilitychange", resetVelocity);
+
+    return () => {
+      window.removeEventListener("resize", resetVelocity);
+      document.removeEventListener("visibilitychange", resetVelocity);
+      setVelocity(-1);
+    };
+  }, []);
+
   if (isLoading) {
     return <Loader />;
   }
@@ -56,6 +84,23 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <VisionMission />
+      <div className="h-[500px] grid place-content-center w-full overflow-hidden">
+        <VelocityScroll
+          defaultVelocity={-velocity}
+          numRows={1}
+          key={`scroll-1-${velocity}`}
+        >
+          Department of Electrical and Electronics Engineering
+        </VelocityScroll>
+
+        <VelocityScroll
+          defaultVelocity={velocity}
+          numRows={1}
+          key={`scroll-2-${velocity}`}
+        >
+          Electrical and Electronics Association
+        </VelocityScroll>
+      </div>
       <EventsSection />
       <ExecomSection />
       <Footer />
