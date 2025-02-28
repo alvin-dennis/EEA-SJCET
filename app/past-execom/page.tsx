@@ -56,7 +56,7 @@ export default function PastExecom() {
         </Select>
       </div>
 
-      <div className="py-8 px-4 mx-auto max-w-[--breakpoint-xl] text-center lg:py-16 lg:px-6">
+      <div className="py-8 px-4 mx-auto max-w-(--breakpoint-xl) text-center lg:py-16 lg:px-6">
         <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {EXECOM_MEMBERS.map((member: ExecomMember, index: number) => (
             <div
@@ -100,8 +100,9 @@ export default function PastExecom() {
       </div>
       <div className="text-center mt-12 flex justify-center">
         <Link href="/">
-          <Button size="lg" className="items-center flex">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Go Home
+          <Button size="lg" className="items-center flex cursor-pointer">
+            <ArrowLeft className="mr-2 h-4 w-4" /> 
+            Go Home
           </Button>
         </Link>
       </div>

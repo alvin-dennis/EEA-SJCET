@@ -89,7 +89,7 @@ export default function EventsSection() {
         </Swiper>
 
         <div className="text-center mt-12">
-          <Button size="lg">
+          <Button size="lg" className="cursor-pointer">
             View All Events
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

@@ -75,7 +75,7 @@ export default function ExecomSection() {
         </div>
         <div className="text-center mt-12 flex justify-center">
           <Link href="/execom">
-            <Button size="lg" className="items-center flex">
+            <Button size="lg" className="items-center flex cursor-pointer">
               Meet the Team
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

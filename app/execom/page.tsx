@@ -24,8 +24,8 @@ export default function ExecomPage() {
 
   return (
     <main className="min-h-screen py-12">
-      <div className="py-8 px-4 mx-auto max-w-[--breakpoint-xl] text-center lg:py-16 lg:px-6">
-        <div className="mx-auto mb-8 max-w-[--breakpoint-sm] lg:mb-16">
+      <div className="py-8 px-4 mx-auto max-w-(--breakpoint-xl) text-center lg:py-16 lg:px-6">
+        <div className="mx-auto mb-8 max-w-(--breakpoint-sm) lg:mb-16">
           <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
             EEA Execom 2024 - 2025
           </h1>
@@ -76,7 +76,7 @@ export default function ExecomPage() {
       </div>
       <div className="text-center mt-12 flex justify-center">
         <Link href="/past-execom">
-          <Button size="lg" className="items-center flex">
+          <Button size="lg" className="items-center flex cursor-pointer">
             View Previous Execoms
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

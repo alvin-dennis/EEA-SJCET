@@ -21,14 +21,14 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg shadow-xs"
+          ? "bg-background/80 backdrop-blur-lg shadow-2xs"
           : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="font-bold text-xl">
-            <span className="hidden lg:inline font-nura">
+            <span className="hidden lg:inline font-nura cursor-pointer">
               Electrical and Electronics Association
             </span>
             <span className="lg:hidden">EEA</span>
@@ -37,7 +37,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden focus:outline-none z-50"
+            className="lg:hidden focus:outline-hidden z-50"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-6 flex items-center justify-center relative">
@@ -62,25 +62,25 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-8 ml-auto">
             <Link
               href="#about"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               About
             </Link>
             <Link
               href="#events"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               Events
             </Link>
             <Link
               href="#execom"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               Execom
             </Link>
             <Link
               href="#contact"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               Contact
             </Link>
