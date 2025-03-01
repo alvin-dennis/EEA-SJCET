@@ -10,7 +10,7 @@ const iconMap = {
   Rocket: Rocket,
 };
 
-export default function AboutSection() {
+export default function About() {
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 pointer-events-none">

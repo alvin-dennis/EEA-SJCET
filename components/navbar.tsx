@@ -62,25 +62,25 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-8 ml-auto">
             <Link
               href="#about"
-              className="hover:text-primary transition-colors cursor-pointer"
+              className="hover:text-primary transition-colors cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300"
             >
               About
             </Link>
             <Link
               href="#events"
-              className="hover:text-primary transition-colors cursor-pointer"
+              className="hover:text-primary transition-colors cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300"
             >
               Events
             </Link>
             <Link
               href="#execom"
-              className="hover:text-primary transition-colors cursor-pointer"
+              className="hover:text-primary transition-colors cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300"
             >
               Execom
             </Link>
             <Link
               href="#contact"
-              className="hover:text-primary transition-colors cursor-pointer"
+              className="hover:text-primary transition-colors cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300"
             >
               Contact
             </Link>

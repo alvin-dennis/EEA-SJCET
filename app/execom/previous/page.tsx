@@ -1,24 +1,37 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { EXECOM_MEMBERS } from "@/lib/constants";
-import Link from "next/link";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { LinkedinIcon, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Loader from "@/components/loader";
-import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
-const LinkedinIcon = dynamic(
-  () => import("lucide-react").then((mod) => mod.Linkedin),
-  {
-    ssr: false,
-  }
-);
+interface SocialLinks {
+  linkedin?: string;
+}
 
-export default function ExecomPage() {
+interface ExecomMember {
+  name: string;
+  position: string;
+  image: string;
+  socialLinks: SocialLinks;
+}
+
+export default function PreviousExecom() {
+  const [selectedYear, setSelectedYear] = useState("2022-23");
   const [isMounted, setIsMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  const years = ["2022-23", "2021-22", "2020-21"];
 
   useEffect(() => {
     setIsMounted(true);
@@ -37,18 +50,29 @@ export default function ExecomPage() {
       {isLoading ? (
         <Loader />
       ) : (
-        <main className="min-h-screen py-12">
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold text-center mb-8">
+            Previous EEA Execoms
+          </h1>
+
+          <div className="w-[200px] mx-auto mb-8">
+            <Select value={selectedYear} onValueChange={setSelectedYear}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select Year" />
+              </SelectTrigger>
+              <SelectContent>
+                {years.map((year) => (
+                  <SelectItem key={year} value={year}>
+                    {year}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
           <div className="py-8 px-4 mx-auto max-w-(--breakpoint-xl) text-center lg:py-16 lg:px-6">
-            <div className="mx-auto mb-8 max-w-(--breakpoint-sm) lg:mb-16">
-              <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                EEA Execom 2024 - 2025
-              </h1>
-              <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-                The team leading EESA-SJCET forward
-              </p>
-            </div>
             <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {EXECOM_MEMBERS.map((member, index) => (
+              {EXECOM_MEMBERS.map((member: ExecomMember, index: number) => (
                 <div
                   key={member.name}
                   className="text-center text-gray-500 dark:text-gray-400 animate-fade-in-up group"
@@ -89,14 +113,14 @@ export default function ExecomPage() {
             </div>
           </div>
           <div className="text-center mt-12 flex justify-center">
-            <Link href="/execom/previous">
+            <Link href="/">
               <Button size="lg" className="items-center flex cursor-pointer">
-                View Previous Execoms
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Go Home
               </Button>
             </Link>
           </div>
-        </main>
+        </div>
       )}
     </>
   );

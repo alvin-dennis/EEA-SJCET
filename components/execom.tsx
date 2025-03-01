@@ -15,7 +15,7 @@ const LinkedinIcon = dynamic(
   }
 );
 
-export default function ExecomSection() {
+export default function Execom() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

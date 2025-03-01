@@ -2,20 +2,21 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar";
-import HeroSection from "@/components/hero";
-import AboutSection from "@/components/about";
+import Hero from "@/components/hero";
+import About from "@/components/about";
 import VisionMission from "@/components/vision-mission";
-import EventsSection from "@/components/events";
-import ExecomSection from "@/components/execom";
+import Events from "@/components/events";
+import Execom from "@/components/execom";
 import Footer from "@/components/footer";
 import Loader from "@/components/loader";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [velocity, setVelocity] = useState(-1);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
 
@@ -40,72 +41,58 @@ export default function Home() {
       }
     };
 
-    document.addEventListener("click", handleAnchorClick);
-
-    return () => {
-      document.removeEventListener("click", handleAnchorClick);
-    };
-  }, []);
-
-  const [velocity, setVelocity] = useState(-1);
-
-  useEffect(() => {
     const resetVelocity = () => {
-      const width = window.innerWidth;
-      if (width < 768) {
-        setVelocity(-1.5);
-      } else if (width < 1024) {
-        setVelocity(-1.5);
-      } else {
-        setVelocity(-1.5);
-      }
+      setVelocity(-1.5);
     };
 
     resetVelocity();
-
+    document.addEventListener("click", handleAnchorClick);
     window.addEventListener("resize", resetVelocity);
-
     document.addEventListener("visibilitychange", resetVelocity);
 
     return () => {
+      clearTimeout(timer);
+      document.removeEventListener("click", handleAnchorClick);
       window.removeEventListener("resize", resetVelocity);
       document.removeEventListener("visibilitychange", resetVelocity);
       setVelocity(-1);
     };
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
   return (
-    <main className="min-h-screen scroll-smooth">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <VisionMission />
-      <div className="h-[500px] grid place-content-center w-full overflow-hidden">
-        <VelocityScroll
-          defaultVelocity={-velocity}
-          numRows={1}
-          key={`scroll-1-${velocity}`}
-          className=" font-nura text-4xl"
-        >
-          Department of Electrical and Electronics Engineering
-        </VelocityScroll>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <main className="min-h-screen scroll-smooth">
+          <Navbar />
+          <Hero />
+          <About />
+          <VisionMission />
+          <div className="h-[500px] grid place-content-center w-full overflow-hidden">
+            <VelocityScroll
+              defaultVelocity={-velocity}
+              numRows={1}
+              key={`scroll-1-${velocity}`}
+              className=" font-nura text-4xl"
+            >
+              Department of Electrical and Electronics Engineering
+            </VelocityScroll>
 
-        <VelocityScroll
-          defaultVelocity={velocity}
-          numRows={1}
-          key={`scroll-2-${velocity}`}
-          className=" font-nura text-4xl"
-        >
-          Electrical and Electronics Association
-        </VelocityScroll>
-      </div>
-      <EventsSection />
-      <ExecomSection />
-      <Footer />
-    </main>
+            <VelocityScroll
+              defaultVelocity={velocity}
+              numRows={1}
+              key={`scroll-2-${velocity}`}
+              className=" font-nura text-4xl"
+            >
+              Electrical and Electronics Association
+            </VelocityScroll>
+          </div>
+          <Events />
+          <Execom />
+          <Footer />
+        </main>
+      )}
+    </>
   );
 }

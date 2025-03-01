@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { FOOTER_LINKS, CONTACT_INFO } from "@/lib/constants";
 import Image from "next/image";
-import EEALOGO from "@/assets/EEA.webp";
+import EEALOGO from "@/public/assets/EEA.webp";
 
 export default function Footer() {
   return (

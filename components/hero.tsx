@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import EEALOGO from "@/assets/EEA.webp";
+import EEALOGO from "@/public/assets/EEA.webp";
 import { Sparkles } from "@/components/ui/sparkles";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Link from "next/link";
 
-export default function HeroSection() {
+export default function Hero() {
   return (
     <section
       id="home"

@@ -9,17 +9,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default function EventsSection() {
+export default function Events() {
   const sectionRef = useRef(null);
 
   return (
     <section id="events" ref={sectionRef} className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-4 inline-block relative"
-          >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block relative">
             Events
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary rounded-full" />
           </h2>
@@ -88,11 +87,13 @@ export default function EventsSection() {
           ))}
         </Swiper>
 
-        <div className="text-center mt-12">
-          <Button size="lg" className="cursor-pointer">
-            View All Events
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+        <div className="text-center mt-12 flex justify-center">
+          <Link href="/events">
+            <Button size="lg" className="items-center flex cursor-pointer">
+              View all Events
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
